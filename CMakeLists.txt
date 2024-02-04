@@ -30,11 +30,11 @@ target_link_libraries(exe
         nrf-mdk::startup
         nrf-mdk::definitions
         
-        nrfx::hal
-        nrfx::soc
+        # nrfx::hal # Optional - can be used instead of the drivers layer.
+        
         nrfx::drivers::prs
-        nrfx::drivers::adc
-        nrfx::drivers::bellboard
+        # nrfx::drivers::adc
+        # nrfx::drivers::bellboard
         nrfx::drivers::clock
         nrfx::drivers::comp
         nrfx::drivers::dppi
@@ -42,35 +42,35 @@ target_link_libraries(exe
         nrfx::drivers::gpiote
         nrfx::drivers::grtc
         nrfx::drivers::i2s
-        nrfx::drivers::ipc
+        # nrfx::drivers::ipc
         nrfx::drivers::lpcomp
         nrfx::drivers::nfct
-        nrfx::drivers::nvmc
-        nrfx::drivers::pdm
+        # nrfx::drivers::nvmc
+        # nrfx::drivers::pdm
         nrfx::drivers::power
-        nrfx::drivers::ppi
-        nrfx::drivers::pwm
+        # nrfx::drivers::ppi
+        # nrfx::drivers::pwm - Bug in NRFX, PWM not supported for nrf54l15
         nrfx::drivers::qdec
-        nrfx::drivers::qspi
-        nrfx::drivers::rng
+        # nrfx::drivers::qspi
+        # nrfx::drivers::rng
         nrfx::drivers::rramc
         nrfx::drivers::rtc
         nrfx::drivers::saadc
-        nrfx::drivers::spi
+        # nrfx::drivers::spi
         nrfx::drivers::spim
         nrfx::drivers::spis
         nrfx::drivers::systick
-        nrfx::drivers::tbm
+        # nrfx::drivers::tbm
         nrfx::drivers::temp
         nrfx::drivers::timer
-        nrfx::drivers::twi
+        # nrfx::drivers::twi
         nrfx::drivers::twim
         nrfx::drivers::twis
-        nrfx::drivers::uart
+        # nrfx::drivers::uart
         nrfx::drivers::uarte
-        nrfx::drivers::usbd
-        nrfx::drivers::usbreg
-        nrfx::drivers::vevif
+        # nrfx::drivers::usbd
+        # nrfx::drivers::usbreg
+        # nrfx::drivers::vevif
         nrfx::drivers::wdt
 
         nrfx::helpers::ram_ctrl

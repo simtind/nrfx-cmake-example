@@ -7,7 +7,6 @@ extern "C" {
 #endif
 
 #include <nrf.h>
-#include <soc/nrfx_irqs.h>
 #include <soc/nrfx_atomic.h>
 #include <soc/nrfx_coredep.h>
 
@@ -208,6 +207,58 @@ extern "C" {
  *         If x is 0, the result is undefined.
  */
 #define NRFX_CTZ(value) __CLZ(__RBIT(value))
+
+//------------------------------------------------------------------------------
+
+/**
+ * @brief When set to a non-zero value, this macro specifies that the
+ *        @ref nrfx_error_codes and the @ref nrfx_err_t type itself are defined
+ *        in a customized way and the default definitions from @c <nrfx_error.h>
+ *        should not be used.
+ */
+#define NRFX_CUSTOM_ERROR_CODES 0
+
+//------------------------------------------------------------------------------
+
+/**
+ * @brief When set to a non-zero value, this macro specifies that inside HALs
+ *        the event registers are read back after clearing, on devices that
+ *        otherwise could defer the actual register modification.
+ */
+#define NRFX_EVENT_READBACK_ENABLED 1
+
+//------------------------------------------------------------------------------
+
+/**
+ * @brief Macro for writing back cache lines associated with the specified buffer.
+ *
+ * @note Macro should be empty if data cache is disabled or not present.
+ *
+ * @param[in] p_buffer Pointer to the buffer.
+ * @param[in] size     Size of the buffer.
+ */
+#define NRFY_CACHE_WB(p_buffer, size) do {(void)p_buffer; (void)size;} while(false)
+
+/**
+ * @brief Macro for invalidating cache lines associated with the specified buffer.
+ *
+ * @note Macro should be empty if data cache is disabled or not present.
+ *
+ * @param[in] p_buffer Pointer to the buffer.
+ * @param[in] size     Size of the buffer.
+ */
+#define NRFY_CACHE_INV(p_buffer, size) do {(void)p_buffer; (void)size;} while(false)
+
+/**
+ * @brief Macro for writing back and invalidating cache lines associated with
+ *        the specified buffer.
+ *
+ * @note Macro should be empty if data cache is disabled or not present.
+ *
+ * @param[in] p_buffer Pointer to the buffer.
+ * @param[in] size     Size of the buffer.
+ */
+#define NRFY_CACHE_WBINV(p_buffer, size) do {(void)p_buffer; (void)size;} while(false)
 
 // The rest of the macros are system-dependent and should be overloaded if needed. See the nrfx_glue.h template.
 
