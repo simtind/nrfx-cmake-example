@@ -1,0 +1,5 @@
+{
+    "cmake.configureSettings": {
+        "MDK_TARGET_SOC": "nrf54l15_enga_xxaa"
+    }
+}
